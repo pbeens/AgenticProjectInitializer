@@ -99,7 +99,7 @@ If you are new, the prompt can guide you step by step.
 It may:
 - ask clarifying questions
 - spot missing inputs
-- offer an optional setup checklist before building folders
+- offer an optional setup checklist file before building folders
 
 ### Optional Setup Checklist
 
@@ -108,6 +108,8 @@ The checklist can help you:
 - define outputs
 - identify constraints
 - organize references
+
+When used, the checklist should be created as `setup-checklist.md` (not just posted in chat).
 
 You can use it first, or skip it and continue.
 

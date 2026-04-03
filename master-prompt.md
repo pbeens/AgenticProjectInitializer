@@ -54,6 +54,8 @@ If not ready, ask:
 
 If the user says yes:
 - generate a checklist tailored to their project
+- create the checklist as a Markdown file named `setup-checklist.md` (not chat-only text)
+- include the full checklist content in a fenced Markdown code block so it can be saved directly
 - include gathering sources, defining outputs, identifying constraints, and organizing references
 - recommend clean text formats (especially Markdown)
 - if relevant, suggest converting PDFs to Markdown first
