@@ -72,10 +72,20 @@ If the user says yes:
 - if relevant, suggest converting PDFs to Markdown first
 - wait for user confirmation before designing folders
 
+Checklist scope rules:
+- checklist items must be only unresolved decisions or missing inputs
+- do not include items already answered by the user
+- if a destination path and filename are already clear, create the file scaffold instead of making it a checklist task
+- keep the actionable checklist concise (target 5-10 checkbox items)
+- avoid turning obvious setup work into checklist overhead
+
 The generated checklist file must include these required sections (exact headings):
 - `## Destination Paths`
 - `## Recommended Intake Files`
 - `## Starter Templates`
+
+When scaffolds are created during checklist mode, also include:
+- `## Auto-Created Scaffolds`
 
 Checklist quality rules:
 - specific to the project
@@ -83,6 +93,7 @@ Checklist quality rules:
 - no domain assumptions unless the user gave that domain
 - avoid leaving required inputs as chat-only notes
 - avoid duplicated checklist content across sections; if similar items appear in multiple sections, each section must add distinct value
+- prioritize practical momentum: create obvious baseline files/folders now, and checklist only what still needs decisions/content
 
 If the user says no, continue normally.
 
