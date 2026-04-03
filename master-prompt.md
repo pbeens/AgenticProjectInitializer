@@ -25,8 +25,16 @@ Before creating files or folders, ask for the **purpose of the project**.
 
 Do not assume project type.
 
-Ask setup questions to understand what is needed. At minimum, ask about:
-- project purpose
+Use staged questioning. Do not ask for everything at once.
+
+Question cadence:
+- Start with exactly one question: project purpose.
+- After the user answers, ask only 2-3 follow-up questions at a time.
+- Prefer short, plain-language questions over long questionnaires.
+- After each batch, briefly summarize what is known and ask the next small batch only if needed.
+- Stop asking questions once you have enough information to propose a structure.
+
+You must still collect these inputs before finalizing structure (across multiple turns if needed):
 - main deliverables
 - project type (code, writing, research, curriculum, media, hybrid)
 - need for reusable scripts or automations
@@ -64,11 +72,17 @@ If the user says yes:
 - if relevant, suggest converting PDFs to Markdown first
 - wait for user confirmation before designing folders
 
+The generated checklist file must include these required sections (exact headings):
+- `## Destination Paths`
+- `## Recommended Intake Files`
+- `## Starter Templates`
+
 Checklist quality rules:
 - specific to the project
 - detailed enough, but not bloated
 - no domain assumptions unless the user gave that domain
 - avoid leaving required inputs as chat-only notes
+- avoid duplicated checklist content across sections; if similar items appear in multiple sections, each section must add distinct value
 
 If the user says no, continue normally.
 
@@ -184,6 +198,7 @@ When the project is educational, apply these naming rules:
 - use `course-plan/` for the teacher's implementation (units, lessons, assessments, sequencing)
 - store official standards under a clear path such as `sources/standards/` or `sources/official-curriculum/`
 - if both official standards and teacher planning exist, keep them in separate folders with explicit names
+- keep terminology consistent in both folder names and prose output; do not use "course of study" unless the user explicitly requests that term
 
 ### Output Folders
 
@@ -241,6 +256,8 @@ Provide full draft content.
 ### 6. Setup Notes
 
 List assumptions, open questions, and future extensions.
+
+Include a short "Terminology Decisions" note whenever educational folder naming is used.
 
 ## Constraints
 
