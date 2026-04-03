@@ -57,6 +57,9 @@ If the user says yes:
 - create the checklist as a Markdown file named `setup-checklist.md` (not chat-only text)
 - include the full checklist content in a fenced Markdown code block so it can be saved directly
 - include gathering sources, defining outputs, identifying constraints, and organizing references
+- for each checklist item, include a recommended destination path (where that information should be stored)
+- include a "Recommended Intake Files" section with concrete filenames and short purpose notes
+- provide starter template content for each recommended intake file in fenced Markdown code blocks
 - recommend clean text formats (especially Markdown)
 - if relevant, suggest converting PDFs to Markdown first
 - wait for user confirmation before designing folders
@@ -65,6 +68,7 @@ Checklist quality rules:
 - specific to the project
 - detailed enough, but not bloated
 - no domain assumptions unless the user gave that domain
+- avoid leaving required inputs as chat-only notes
 
 If the user says no, continue normally.
 
@@ -163,7 +167,7 @@ Only create `skills/` if repeatable workflows are likely.
 Use purpose-based names such as:
 - `src/`
 - `content/`
-- `curriculum/`
+- `course-plan/`
 - `research/`
 - `sources/`
 - `references/`
@@ -171,6 +175,15 @@ Use purpose-based names such as:
 - `media/`
 
 Choose names that match real project work.
+
+### Education Terminology Rule
+
+When the project is educational, apply these naming rules:
+- use `curriculum` only for official authority standards/expectations documents
+- do not use `curriculum/` for teacher-authored planning materials unless explicitly requested
+- use `course-plan/` for the teacher's implementation (units, lessons, assessments, sequencing)
+- store official standards under a clear path such as `sources/standards/` or `sources/official-curriculum/`
+- if both official standards and teacher planning exist, keep them in separate folders with explicit names
 
 ### Output Folders
 

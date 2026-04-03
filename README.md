@@ -65,7 +65,7 @@ Many new projects run into:
 - no persistent guidance for agents
 - too much reliance on chat context
 
-This project helps by enforcing:
+This project helps you set up:
 - a clean setup process
 - a standard `AGENTS.md`
 - consistent organization from day one
@@ -109,7 +109,7 @@ The checklist can help you:
 - identify constraints
 - organize references
 
-When used, the checklist should be created as `setup-checklist.md` (not just posted in chat).
+Checklist filename: `setup-checklist.md`.
 
 You can use it first, or skip it and continue.
 
