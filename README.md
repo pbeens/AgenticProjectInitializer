@@ -54,7 +54,7 @@ This initializer is vendor-neutral, so you can use whichever tool fits your work
 - Codex IDE docs: [https://developers.openai.com/codex/ide](https://developers.openai.com/codex/ide)
 - Codex for VS Code (Marketplace): [https://marketplace.visualstudio.com/items?itemName=openai.chatgpt](https://marketplace.visualstudio.com/items?itemName=openai.chatgpt)
 - Claude Code overview: [https://docs.anthropic.com/en/docs/claude-code/overview](https://docs.anthropic.com/en/docs/claude-code/overview)
-- Google Antigravity announcement (within Gemini 3 launch): [https://blog.google/products-and-platforms/products/gemini/gemini-3/](https://blog.google/products-and-platforms/products/gemini/gemini-3/)
+- Google Antigravity: [https://antigravity.google/](https://antigravity.google/)
 
 ## What Problem It Solves
 
