@@ -109,7 +109,8 @@ The checklist can help you:
 - identify constraints
 - organize references
 
-Checklist filename: `setup-checklist.md`.
+Checklist location: keep checklist files beside the relevant work item (for example `lesson-00-01-checklist.md` next to the lesson file).
+If you want checklist/task files to stay local, add ignore patterns such as `*-checklist.md` and `*-tasks.md` to `.gitignore`.
 
 You can use it first, or skip it and continue.
 
