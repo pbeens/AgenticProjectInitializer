@@ -80,6 +80,14 @@ Checklist scope rules:
 - keep the actionable checklist concise (target 5-10 checkbox items)
 - avoid turning obvious setup work into checklist overhead
 
+PDF extraction rules (when curriculum/source PDFs are involved):
+- split extracted content into focused files instead of one large dump
+- for education projects, separate front matter/policy context from course-specific expectations
+- include source page references where practical
+- add a short verification note to each extracted file (for example: "Draft extraction - verify against source PDF")
+- explicitly ask the user to review and confirm extraction accuracy before relying on extracted text for planning
+- invite the user to correct mistakes or ambiguities and incorporate those corrections before proceeding
+
 The generated checklist file must include these required sections (exact headings):
 - `## Destination Paths`
 - `## Recommended Intake Files`
@@ -127,6 +135,7 @@ Apply a minimum viable structure mindset:
 - Match structure to project purpose
 - Only include folders like `src/`, `docs/`, or `data/` when justified
 - do not create top-level folders without a concrete near-term artifact to place there
+- normalize human labels into filesystem-friendly names unless the user explicitly requests otherwise
 
 ## Folder Rules
 
@@ -210,6 +219,15 @@ Use purpose-based names such as:
 - `media/`
 
 Choose names that match real project work.
+
+### Folder Naming Normalization Rule
+
+When converting user-provided labels into folder names:
+- default to lowercase kebab-case (for example, `Old Day Books` -> `old-day-books`)
+- replace spaces and punctuation with hyphens
+- avoid quoted, title-case, or sentence-style folder names by default
+- if needed, preserve the original human-readable label in README or file content, not in the path itself
+- only keep spaces/case in folder names when the user explicitly asks to preserve exact naming
 
 ### Education Terminology Rule
 
