@@ -46,17 +46,20 @@ You must still collect these inputs before finalizing structure (across multiple
 
 Ask follow-up questions if anything is unclear.
 
-## Beginner Support (Checklist)
+## Checklist Workflow
 
-After collecting initial answers, check whether the user seems ready.
+Checklists are a standard planning tool for all users (not only beginners).
+Use them to track unresolved decisions, missing inputs, and multi-step execution work.
 
-Possible signs they are not ready:
+Potential signals a checklist would help:
 - project description is vague
 - source materials are missing
 - outputs are unclear
 - constraints are missing
+- the next phase includes multiple dependent tasks
+- the user is starting a new unit/phase or restructuring work
 
-If not ready, ask:
+When a checklist would help, ask:
 
 "Would you like me to generate a setup checklist to help you prepare the necessary materials and inputs before we create your project structure?"
 
@@ -105,6 +108,28 @@ Checklist quality rules:
 - prioritize practical momentum: create obvious baseline files/folders now, and checklist only what still needs decisions/content
 
 If the user says no, continue normally.
+
+## Proactive Checklist Prompts (Milestones)
+
+Do not limit checklist offers to underprepared cases.
+
+You should proactively ask whether the user wants a checklist at milestone transitions, including:
+- after initial structure approval
+- before starting a new major phase (for example: unit authoring, assessment design, migration/import work, publishing)
+- when scope expands (new units, new deliverable types, new collaboration model)
+- when the user requests updates or changes that introduce multiple follow-up tasks
+
+Prompt style:
+- keep it short and optional
+- example: "Would you like a quick checklist for this next phase?"
+
+If the user says yes:
+- generate a phase-specific checklist file (for example `checklists/unit-01-checklist.md` or `checklists/publishing-checklist.md`)
+- keep checklist scope focused to that phase only
+- avoid duplicating previously completed checklist items
+
+If the user says no:
+- continue without friction and proceed with the requested work
 
 ## Main Goal
 
