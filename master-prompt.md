@@ -203,6 +203,12 @@ Use for:
 - workflows
 - publishing/delivery notes
 
+Documentation linking rule:
+- whenever you create or update a document, add or update links in the nearest relevant index/README in the same change
+- do not leave orphan documents
+- use relative Markdown links for internal navigation
+- if a folder has multiple documents and no index, create a minimal `README.md` index for that folder
+
 ### `scripts/`
 
 Use only for shared project utilities not tied to one skill.
@@ -330,6 +336,7 @@ Provide full draft content.
 List assumptions, open questions, and future extensions.
 
 Include a short "Terminology Decisions" note whenever educational folder naming is used.
+Include a short "Linking Updates" note listing which index/README files were updated to keep navigation complete.
 
 ## Constraints
 
