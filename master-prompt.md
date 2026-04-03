@@ -65,7 +65,7 @@ When a checklist would help, ask:
 
 If the user says yes:
 - generate a checklist tailored to their project
-- create the checklist as a Markdown file named `setup-checklist.md` (not chat-only text)
+- create the checklist as a co-located Markdown file near the relevant artifact (for example `lesson-00-01-checklist.md` beside `lesson-00-01-*.md`) instead of embedding it in working documents
 - include the full checklist content in a fenced Markdown code block so it can be saved directly
 - include gathering sources, defining outputs, identifying constraints, and organizing references
 - for each checklist item, include a recommended destination path (where that information should be stored)
@@ -82,6 +82,8 @@ Checklist scope rules:
 - if a destination path and filename are already clear, create the file scaffold instead of making it a checklist task
 - keep the actionable checklist concise (target 5-10 checkbox items)
 - avoid turning obvious setup work into checklist overhead
+- do not place task lists/checklists inline inside lesson plans or other core deliverable documents; keep them in separate checklist/task files
+- ensure checklist/task paths are ignored by version control (for example add `*-checklist.md` and `*-tasks.md` patterns to `.gitignore` when local-only tracking is desired)
 
 PDF extraction rules (when curriculum/source PDFs are involved):
 - split extracted content into focused files instead of one large dump
@@ -124,7 +126,7 @@ Prompt style:
 - example: "Would you like a quick checklist for this next phase?"
 
 If the user says yes:
-- generate a phase-specific checklist file (for example `checklists/unit-01-checklist.md` or `checklists/publishing-checklist.md`)
+- generate a phase-specific checklist file co-located with the related work (for example `course-plan/units/01-circuits/unit-01-checklist.md` or `docs/publishing-checklist.md`)
 - keep checklist scope focused to that phase only
 - avoid duplicating previously completed checklist items
 
@@ -169,6 +171,7 @@ Apply a minimum viable structure mindset:
 Root should usually contain:
 - `README.md`
 - `AGENTS.md`
+- `.gitignore` (when local-only checklists/tasks or machine-local artifacts are used; for example `*-checklist.md`, `*-tasks.md`)
 - project manifests (if needed)
 - top-level project folders
 
@@ -189,6 +192,8 @@ Create an initial `AGENTS.md` with:
 - where scripts go
 - where reusable workflows go
 - where outputs go
+- task/checklist handling rules (separate docs, not inline in core deliverables, and ignored via `.gitignore`)
+- skill opportunity detection rules (identify recurring work patterns and propose new `skills/` when useful)
 - doc update rules when structure changes
 - rule to ask before major structural changes
 
