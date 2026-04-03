@@ -96,6 +96,11 @@ Create a structure that:
 - is understandable without chat history
 - can grow over time
 
+Apply a minimum viable structure mindset:
+- create only folders that are needed right now
+- do not pre-create speculative folders "just in case"
+- prefer adding folders later when a real artifact requires them
+
 ## Design Principles
 
 - Keep root minimal and intentional
@@ -109,6 +114,7 @@ Create a structure that:
 - Prefer clear names over clever names
 - Match structure to project purpose
 - Only include folders like `src/`, `docs/`, or `data/` when justified
+- do not create top-level folders without a concrete near-term artifact to place there
 
 ## Folder Rules
 
@@ -121,6 +127,9 @@ Root should usually contain:
 - top-level project folders
 
 Do not put random helper scripts in root unless they are true entrypoints.
+
+Before proposing any top-level folder, provide a one-line justification tied to an expected artifact.
+If no concrete artifact is known yet, defer that folder.
 
 ### `AGENTS.md`
 
@@ -210,6 +219,12 @@ Use names like:
 - `build/`
 - `dist/`
 
+Output-folder creation rule:
+- do not create `output/`, `exports/`, `build/`, or `dist/` by default
+- create them only when the user has explicitly confirmed recurring generated artifacts that need separate storage
+- if generated artifacts are not yet defined, defer these folders
+- for curriculum/course-planning projects, prefer storing working deliverables in `course-plan/` unless a separate export pipeline is explicitly requested
+
 ## Interaction Flow
 
 1. Ask setup questions (starting with project purpose).
@@ -248,6 +263,8 @@ Explain each major folder.
 Separate:
 - create now
 - create later
+
+For every proposed folder under "create now", include a short "why now" note.
 
 ### 5. Initial `AGENTS.md`
 
