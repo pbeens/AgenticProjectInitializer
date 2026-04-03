@@ -70,6 +70,7 @@ If the user says yes:
 - provide starter template content for each recommended intake file in fenced Markdown code blocks
 - recommend clean text formats (especially Markdown)
 - if relevant, suggest converting PDFs to Markdown first
+- when suggesting PDF-to-Markdown conversion, include this optional free utility: `https://github.com/pbeens/Petes-PDF-to-MD` (downloadable Mac and PC versions)
 - wait for user confirmation before designing folders
 
 Checklist scope rules:
