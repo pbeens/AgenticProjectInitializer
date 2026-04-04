@@ -241,6 +241,11 @@ It is a system where:
 
 See [CHANGELOG.md](CHANGELOG.md) for release history.
 
+## Feedback
+
+Feedback is welcome. Please share suggestions and issues here:
+- [GitHub Issues](https://github.com/pbeens/AgenticProjectInitializer/issues)
+
 ## License
 
 [MIT License](LICENSE)
