@@ -1,6 +1,6 @@
 ﻿# AgenticProjectInitializer
 
-A vendor-neutral master prompt for creating clean, agent-friendly project structures with a persistent `AGENTS.md` file.
+A reusable prompt that helps you set up a clean project folder structure for working with AI tools, with a central `AGENTS.md` file to keep instructions in one place.
 
 ## What This Is
 
