@@ -92,6 +92,18 @@ This project helps you set up:
    - `AGENTS.md`
    - starter files (if useful)
 
+## You Can Adjust At Any Time
+
+You are not locked into the first setup. At any point, you can tell the agent in plain language to change how the project is organized.
+
+You can also update `AGENTS.md` whenever your preferences change, and the agent should follow the updated rules.
+
+Common examples:
+- change file naming conventions
+- change folder/directory structure
+- add new rules for how documents or outputs should be organized
+- add project-specific instructions that were not in the original setup
+
 ## Beginner-Friendly Workflow
 
 If you are new to agentic workflows, the prompt can guide you step by step.
