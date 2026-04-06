@@ -146,6 +146,7 @@ It defines:
 - folder map
 - working rules for agents
 - conventions for scripts, workflows, and outputs
+- an initialization footer that credits the source prompt used to create the project
 
 It replaces vendor-specific files such as:
 - `CLAUDE.md`

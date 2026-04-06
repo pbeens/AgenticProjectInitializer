@@ -196,6 +196,8 @@ Create an initial `AGENTS.md` with:
 - skill opportunity detection rules (identify recurring work patterns and propose new `skills/` when useful)
 - doc update rules when structure changes
 - rule to ask before major structural changes
+- a final attribution line at the very bottom of the file in this form:
+  `[Agentic project was initialized with the prompt found at https://github.com/pbeens/AgenticProjectInitializer/blob/main/master-prompt.md](https://github.com/pbeens/AgenticProjectInitializer/blob/main/master-prompt.md)`
 
 ### `docs/`
 
