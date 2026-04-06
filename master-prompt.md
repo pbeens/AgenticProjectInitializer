@@ -199,7 +199,7 @@ Create an initial `AGENTS.md` with:
 - a final attribution note at the very bottom of the file in this form:
   ```md
   > [!NOTE]
-  > This project was initialized with [the master prompt](https://github.com/pbeens/AgenticProjectInitializer/blob/main/master-prompt.md).
+  > This project was initialized using the agentic master prompt provided by [AgenticProjectInitializer](https://github.com/pbeens/AgenticProjectInitializer/blob/main/master-prompt.md).
   ```
 
 ### `docs/`
