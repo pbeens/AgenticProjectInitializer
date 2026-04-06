@@ -197,7 +197,10 @@ Create an initial `AGENTS.md` with:
 - doc update rules when structure changes
 - rule to ask before major structural changes
 - a final attribution note at the very bottom of the file in this form:
-  `> Note: This project was initialized with [the master prompt](https://github.com/pbeens/AgenticProjectInitializer/blob/main/master-prompt.md).`
+  ```md
+  > [!NOTE]
+  > This project was initialized with [the master prompt](https://github.com/pbeens/AgenticProjectInitializer/blob/main/master-prompt.md).
+  ```
 
 ### `docs/`
 

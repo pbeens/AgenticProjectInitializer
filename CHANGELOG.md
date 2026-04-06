@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [0.1.3] - 2026-04-06
 
 ### Changed
-- Updated the AGENTS.md attribution instruction in `master-prompt.md` so the backlink is formatted as a Markdown note instead of a plain attribution line.
+- Updated the AGENTS.md attribution instruction in `master-prompt.md` so the backlink is formatted as an Obsidian-style `> [!NOTE]` callout.
 
 ## [0.1.2] - 2026-04-04
 
