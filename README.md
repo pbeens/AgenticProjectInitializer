@@ -78,6 +78,7 @@ This project helps you set up:
   - collects requirements
   - proposes a tailored structure
   - drafts `AGENTS.md`
+  - recommends and scaffolds `tasks.md` when active task tracking is useful
 
 ## How to Use
 
@@ -90,13 +91,14 @@ This project helps you set up:
 7. Approve and apply:
    - folder structure
    - `AGENTS.md`
+   - `tasks.md` (when recommended)
    - starter files (if useful)
 
 ## You Can Adjust At Any Time
 
 You are not locked into the first setup. At any point, you can tell the agent in plain language to change how the project is organized.
 
-You can also update `AGENTS.md` whenever your preferences change, and the agent should follow the updated rules.
+You can update `AGENTS.md` whenever your stable preferences change, and update `tasks.md` as active work evolves across sessions.
 
 Common examples:
 - change file naming conventions
@@ -111,6 +113,7 @@ If you are new to agentic workflows, the prompt can guide you step by step.
 It may:
 - ask clarifying questions
 - spot missing inputs
+- recommend a simple `tasks.md` file for active work tracking
 - offer an optional setup checklist file before building folders
 
 ### Optional Setup Checklist
@@ -122,7 +125,8 @@ The checklist can help you:
 - organize references
 
 Checklist files are typically created beside the relevant work item (for example `lesson-00-01-checklist.md` next to the lesson file).
-You may desire to keep checklist/task files local by adding ignore patterns such as `*-checklist.md` and `*-tasks.md` to `.gitignore`.
+For active work tracking, the default beginner pattern is a single root `tasks.md`.
+If you want checklist/task files to stay local-only, you can add suitable ignore patterns in `.gitignore`.
 
 ### Example: TEJ 3M Course Planning
 
@@ -151,6 +155,18 @@ It defines:
 It replaces vendor-specific files such as:
 - `CLAUDE.md`
 - `GEMINI.md`
+
+### tasks.md
+
+This is the lightweight active work tracker for the project.
+
+Use it for:
+- current focus
+- next tasks
+- open questions or blockers
+- recently completed handoff notes
+
+Keep stable rules in `AGENTS.md`, and put changing execution details in `tasks.md`.
 
 ### Scripts vs Skills
 
@@ -186,6 +202,7 @@ Avoid:
 ```text
 my-project/
 |-- AGENTS.md
+|-- tasks.md            (recommended for active work tracking)
 |-- README.md
 |-- docs/
 |-- src/
