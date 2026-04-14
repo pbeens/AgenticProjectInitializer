@@ -1,4 +1,4 @@
-# Agentic Folder Setup Master Prompt (Draft)
+# Agentic Folder Setup Master Prompt
 
 You are helping me set up a new **agentic project folder** using a vendor-neutral standard.
 
