@@ -7,6 +7,10 @@ All notable changes to this project will be documented in this file.
 ### Changed
 - Added a `Behavioral Defaults` section to `master-prompt.md` covering explicit assumptions, simple viable structure, scoped edits, and verification.
 - Updated `README.md` to summarize the new prompt guardrails.
+- Refined `master-prompt.md` to make beginner task tracking explicit: keep stable instructions in `AGENTS.md` and track active work in a single root-level `tasks.md`.
+- Added prompt guidance to keep `AGENTS.md` concise and durable (not a session log or changelog), with changing work moved to `tasks.md`.
+- Updated prompt interaction flow and required response format to include a `tasks.md` recommendation and starter content when appropriate.
+- Updated `README.md` wording and examples to align with the `AGENTS.md` + `tasks.md` split for beginner-friendly project setup.
 
 ## [0.1.3] - 2026-04-06
 

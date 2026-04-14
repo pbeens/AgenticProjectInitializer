@@ -1,14 +1,18 @@
-﻿# Agentic Folder Setup Master Prompt
+# Agentic Folder Setup Master Prompt (Draft)
 
 You are helping me set up a new **agentic project folder** using a vendor-neutral standard.
 
 Your job is to create a clean, scalable folder structure and an initial `AGENTS.md` file that helps both humans and AI agents work in the project.
+
+This setup should be beginner-friendly. Favor the simplest structure that will still hold up over time.
 
 ## Core Rules
 
 - Use `AGENTS.md` as the main instruction file.
 - Do not use `CLAUDE.md`, `GEMINI.md`, or other vendor-specific files unless I ask for them.
 - Keep this setup generic and portable across project types.
+- Keep `AGENTS.md` focused on stable project instructions, not changing task history.
+- For active work tracking, prefer a single root-level `tasks.md` file over a `tasks/` folder unless I explicitly ask for more complexity.
 
 Supported project types include:
 - software
@@ -59,10 +63,53 @@ You must still collect these inputs before finalizing structure (across multiple
 
 Ask follow-up questions if anything is unclear.
 
+## Beginner-Friendly Task Tracking
+
+Treat task tracking as a normal part of agentic work.
+
+Use this simple split:
+- `AGENTS.md`: stable instructions, conventions, workflow rules, and folder map
+- `tasks.md`: active tasks, current plan, next actions, status notes, and open questions
+
+Do not let `AGENTS.md` become a running log of current work.
+
+When drafting `AGENTS.md`, include rules that:
+- keep `AGENTS.md` concise
+- store changing work in `tasks.md`
+- avoid putting detailed task lists inline inside core deliverables
+- encourage agents to read `AGENTS.md` first, then `tasks.md` when active work is being tracked
+
+When a beginner would benefit from it, recommend creating `tasks.md` during setup.
+
+Common signals that `tasks.md` should be included now:
+- the project has multiple near-term steps
+- the user is new to agentic workflows
+- the work will happen across multiple sessions
+- there are open decisions or dependencies to track
+- the user wants the agent to help plan before implementation
+
+If the project is tiny and no active tracking is needed yet, you may defer `tasks.md`, but explain why.
+
+## Task Workflow Guidance
+
+Use this workflow model unless the user asks for something else:
+
+- Break work into small, reviewable tasks.
+- Prefer one clearly scoped objective per agent session.
+- For non-trivial work, plan before implementing.
+- After a task is completed and verified, update `tasks.md` so the next session can start cleanly.
+
+Task quality rules:
+- tasks should be concrete and outcome-based
+- tasks should be small enough to review and verify
+- tasks should not be so tiny that they create unnecessary overhead
+- avoid vague items like "work on feature"
+- prefer items like "draft unit 1 lesson outline" or "refactor auth middleware and verify tests"
+
 ## Checklist Workflow
 
-Checklists are a standard planning tool for all users (not only beginners).
-Use them to track unresolved decisions, missing inputs, and multi-step execution work.
+Checklists are a standard planning tool for all users, especially beginners.
+Use them to track unresolved decisions, missing inputs, and multi-step preparation work.
 
 Potential signals a checklist would help:
 - project description is vague
@@ -96,7 +143,7 @@ Checklist scope rules:
 - keep the actionable checklist concise (target 5-10 checkbox items)
 - avoid turning obvious setup work into checklist overhead
 - do not place task lists/checklists inline inside lesson plans or other core deliverable documents; keep them in separate checklist/task files
-- ensure checklist/task paths are ignored by version control (for example add `*-checklist.md` and `*-tasks.md` patterns to `.gitignore` when local-only tracking is desired)
+- ensure checklist/task paths are ignored by version control when local-only tracking is desired
 
 PDF extraction rules (when curriculum/source PDFs are involved):
 - split extracted content into focused files instead of one large dump
@@ -165,6 +212,8 @@ Apply a minimum viable structure mindset:
 
 - Keep root minimal and intentional
 - Use `AGENTS.md` as the central guide
+- Keep `AGENTS.md` short enough to be routinely re-read by fresh agent sessions
+- Use `tasks.md` for changing work instead of expanding `AGENTS.md`
 - Put documentation in `docs/`
 - Put shared utilities in `scripts/`
 - Put reusable workflows in `skills/`
@@ -184,7 +233,8 @@ Apply a minimum viable structure mindset:
 Root should usually contain:
 - `README.md`
 - `AGENTS.md`
-- `.gitignore` (when local-only checklists/tasks or machine-local artifacts are used; for example `*-checklist.md`, `*-tasks.md`)
+- `tasks.md` (when active work tracking is useful)
+- `.gitignore` (when local-only checklists/tasks or machine-local artifacts are used)
 - project manifests (if needed)
 - top-level project folders
 
@@ -205,15 +255,40 @@ Create an initial `AGENTS.md` with:
 - where scripts go
 - where reusable workflows go
 - where outputs go
-- task/checklist handling rules (separate docs, not inline in core deliverables, and ignored via `.gitignore`)
+- task/checklist handling rules
 - skill opportunity detection rules (identify recurring work patterns and propose new `skills/` when useful)
 - doc update rules when structure changes
 - rule to ask before major structural changes
+- concise guidance on when agents should consult `tasks.md`
 - a final attribution note at the very bottom of the file in this form:
   ```md
   > [!NOTE]
   > This project was initialized using the agentic master prompt provided by [AgenticProjectInitializer](https://github.com/pbeens/AgenticProjectInitializer/blob/main/master-prompt.md).
   ```
+
+`AGENTS.md` rules must explicitly state:
+- keep this file concise and durable
+- do not turn this file into a session log or changelog
+- store active plans and changing tasks in `tasks.md`
+
+### `tasks.md`
+
+When included, create a simple `tasks.md` that is approachable for beginners.
+
+Its job is to track:
+- active tasks
+- planned next steps
+- open questions
+- completed items worth preserving for handoff
+
+Favor a simple structure such as:
+- current focus
+- next tasks
+- blocked/open questions
+- recently completed
+
+Do not make `tasks.md` overly process-heavy.
+It should help a fresh session resume work quickly.
 
 ### `docs/`
 
@@ -313,14 +388,17 @@ Output-folder creation rule:
 
 1. Ask setup questions (starting with project purpose).
 2. Infer project type and propose structure.
-3. Explain why the structure fits.
-4. Mark what is essential now vs optional later.
-5. Draft initial `AGENTS.md`.
-6. After approval, generate:
+3. Recommend whether `tasks.md` should be included now.
+4. Explain why the structure fits.
+5. Mark what is essential now vs optional later.
+6. Draft initial `AGENTS.md`.
+7. If `tasks.md` is warranted, draft an initial `tasks.md` starter.
+8. After approval, generate:
    - final folder tree
    - full `AGENTS.md`
+   - `tasks.md` if included
    - useful starter placeholders
-7. Keep setup lean.
+9. Keep setup lean.
 
 ## Required Response Format
 
@@ -340,7 +418,7 @@ Provide a clean tree view.
 
 ### 3. Structure Rationale
 
-Explain each major folder.
+Explain each major folder or root file.
 
 ### 4. Essential vs Optional
 
@@ -348,13 +426,25 @@ Separate:
 - create now
 - create later
 
-For every proposed folder under "create now", include a short "why now" note.
+For every proposed item under "create now", include a short "why now" note.
 
-### 5. Initial `AGENTS.md`
+### 5. Task Tracking Recommendation
+
+State one of:
+- include `tasks.md` now
+- defer `tasks.md` for now
+
+Briefly explain why.
+
+### 6. Initial `AGENTS.md`
 
 Provide full draft content.
 
-### 6. Setup Notes
+### 7. Initial `tasks.md` (if included)
+
+Provide a simple starter file.
+
+### 8. Setup Notes
 
 List assumptions, open questions, and future extensions.
 
@@ -370,6 +460,7 @@ Do not:
 - create bloated trees without reason
 - hide assumptions
 - force code/test/build structure on every project
+- use `AGENTS.md` as a task dump
 
 Do:
 - ask purpose first
@@ -377,6 +468,7 @@ Do:
 - stay vendor-neutral
 - use explicit, clear organization
 - optimize for both humans and agents
+- keep the system simple enough for beginners to maintain
 
 ## Initialization Rule
 
