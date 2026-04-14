@@ -6,13 +6,28 @@ Your job is to create a clean, scalable folder structure and an initial `AGENTS.
 
 This setup should be beginner-friendly. Favor the simplest structure that will still hold up over time.
 
+## Copy Guide
+
+- Always copy the `Core Prompt` section.
+- Add `Reference Only` subsections when they match the project:
+  - `Checklist Workflow` for unresolved inputs or setup planning
+  - `Proactive Checklist Prompts` for milestone transitions
+  - `Education Terminology Rule` for educational projects
+  - `Output Folders` for recurring generated artifacts
+- If you are unsure, start with `Core Prompt` only.
+
+---
+
+## Core Prompt
+
+Copy this section for every setup chat.
+
 ## Core Rules
 
 - Use `AGENTS.md` as the main instruction file.
 - Do not use `CLAUDE.md`, `GEMINI.md`, or other vendor-specific files unless I ask for them.
 - Keep this setup generic and portable across project types.
 - Keep `AGENTS.md` focused on stable project instructions, not changing task history.
-- For active work tracking, prefer a single root-level `tasks.md` file over a `tasks/` folder unless I explicitly ask for more complexity.
 
 Supported project types include:
 - software
@@ -79,7 +94,7 @@ When drafting `AGENTS.md`, include rules that:
 - avoid putting detailed task lists inline inside core deliverables
 - encourage agents to read `AGENTS.md` first, then `tasks.md` when active work is being tracked
 
-When a beginner would benefit from it, recommend creating `tasks.md` during setup.
+Recommend creating `tasks.md` when active work spans multiple steps, multiple sessions, or open questions; defer it only when the project is tiny and self-contained.
 
 Common signals that `tasks.md` should be included now:
 - the project has multiple near-term steps
@@ -88,7 +103,7 @@ Common signals that `tasks.md` should be included now:
 - there are open decisions or dependencies to track
 - the user wants the agent to help plan before implementation
 
-If the project is tiny and no active tracking is needed yet, you may defer `tasks.md`, but explain why.
+If none of those signals apply, you may defer `tasks.md`, but explain why.
 
 ## Task Workflow Guidance
 
@@ -105,93 +120,6 @@ Task quality rules:
 - tasks should not be so tiny that they create unnecessary overhead
 - avoid vague items like "work on feature"
 - prefer items like "draft unit 1 lesson outline" or "refactor auth middleware and verify tests"
-
-## Checklist Workflow
-
-Checklists are a standard planning tool for all users, especially beginners.
-Use them to track unresolved decisions, missing inputs, and multi-step preparation work.
-
-Potential signals a checklist would help:
-- project description is vague
-- source materials are missing
-- outputs are unclear
-- constraints are missing
-- the next phase includes multiple dependent tasks
-- the user is starting a new unit/phase or restructuring work
-
-When a checklist would help, ask:
-
-"Would you like me to generate a setup checklist to help you prepare the necessary materials and inputs before we create your project structure?"
-
-If the user says yes:
-- generate a checklist tailored to their project
-- create the checklist as a co-located Markdown file near the relevant artifact (for example `lesson-00-01-checklist.md` beside `lesson-00-01-*.md`) instead of embedding it in working documents
-- include the full checklist content in a fenced Markdown code block so it can be saved directly
-- include gathering sources, defining outputs, identifying constraints, and organizing references
-- for each checklist item, include a recommended destination path (where that information should be stored)
-- include a "Recommended Intake Files" section with concrete filenames and short purpose notes
-- provide starter template content for each recommended intake file in fenced Markdown code blocks
-- recommend clean text formats (especially Markdown)
-- if relevant, suggest converting PDFs to Markdown first
-- when suggesting PDF-to-Markdown conversion, include this optional free utility: `https://github.com/pbeens/Petes-PDF-to-MD` (downloadable Mac and PC versions)
-- wait for user confirmation before designing folders
-
-Checklist scope rules:
-- checklist items must be only unresolved decisions or missing inputs
-- do not include items already answered by the user
-- if a destination path and filename are already clear, create the file scaffold instead of making it a checklist task
-- keep the actionable checklist concise (target 5-10 checkbox items)
-- avoid turning obvious setup work into checklist overhead
-- do not place task lists/checklists inline inside lesson plans or other core deliverable documents; keep them in separate checklist/task files
-- ensure checklist/task paths are ignored by version control when local-only tracking is desired
-
-PDF extraction rules (when curriculum/source PDFs are involved):
-- split extracted content into focused files instead of one large dump
-- for education projects, separate front matter/policy context from course-specific expectations
-- include source page references where practical
-- add a short verification note to each extracted file (for example: "Draft extraction - verify against source PDF")
-- explicitly ask the user to review and confirm extraction accuracy before relying on extracted text for planning
-- invite the user to correct mistakes or ambiguities and incorporate those corrections before proceeding
-
-The generated checklist file must include these required sections (exact headings):
-- `## Destination Paths`
-- `## Recommended Intake Files`
-- `## Starter Templates`
-
-When scaffolds are created during checklist mode, also include:
-- `## Auto-Created Scaffolds`
-
-Checklist quality rules:
-- specific to the project
-- detailed enough, but not bloated
-- no domain assumptions unless the user gave that domain
-- avoid leaving required inputs as chat-only notes
-- avoid duplicated checklist content across sections; if similar items appear in multiple sections, each section must add distinct value
-- prioritize practical momentum: create obvious baseline files/folders now, and checklist only what still needs decisions/content
-
-If the user says no, continue normally.
-
-## Proactive Checklist Prompts (Milestones)
-
-Do not limit checklist offers to underprepared cases.
-
-You should proactively ask whether the user wants a checklist at milestone transitions, including:
-- after initial structure approval
-- before starting a new major phase (for example: unit authoring, assessment design, migration/import work, publishing)
-- when scope expands (new units, new deliverable types, new collaboration model)
-- when the user requests updates or changes that introduce multiple follow-up tasks
-
-Prompt style:
-- keep it short and optional
-- example: "Would you like a quick checklist for this next phase?"
-
-If the user says yes:
-- generate a phase-specific checklist file co-located with the related work (for example `course-plan/units/01-circuits/unit-01-checklist.md` or `docs/publishing-checklist.md`)
-- keep checklist scope focused to that phase only
-- avoid duplicating previously completed checklist items
-
-If the user says no:
-- continue without friction and proceed with the requested work
 
 ## Main Goal
 
@@ -213,7 +141,6 @@ Apply a minimum viable structure mindset:
 - Keep root minimal and intentional
 - Use `AGENTS.md` as the central guide
 - Keep `AGENTS.md` short enough to be routinely re-read by fresh agent sessions
-- Use `tasks.md` for changing work instead of expanding `AGENTS.md`
 - Put documentation in `docs/`
 - Put shared utilities in `scripts/`
 - Put reusable workflows in `skills/`
@@ -358,19 +285,9 @@ When converting user-provided labels into folder names:
 - if needed, preserve the original human-readable label in README or file content, not in the path itself
 - only keep spaces/case in folder names when the user explicitly asks to preserve exact naming
 
-### Education Terminology Rule
-
-When the project is educational, apply these naming rules:
-- use `curriculum` only for official authority standards/expectations documents
-- do not use `curriculum/` for teacher-authored planning materials unless explicitly requested
-- use `course-plan/` for the teacher's implementation (units, lessons, assessments, sequencing)
-- store official standards under a clear path such as `sources/standards/` or `sources/official-curriculum/`
-- if both official standards and teacher planning exist, keep them in separate folders with explicit names
-- keep terminology consistent in both folder names and prose output; do not use "course of study" unless the user explicitly requests that term
-
 ### Output Folders
 
-Keep generated/exported files separate from source materials.
+Keep generated/exported files separate from source materials, but only add output folders when they solve a real storage need.
 
 Use names like:
 - `output/`
@@ -380,7 +297,9 @@ Use names like:
 
 Output-folder creation rule:
 - do not create `output/`, `exports/`, `build/`, or `dist/` by default
-- create them only when the user has explicitly confirmed recurring generated artifacts that need separate storage
+- suggest them when the project will produce recurring builds, exports, or packaged deliverables
+- for software, use them for build artifacts or generated output
+- for writing, research, or curriculum projects, use them for final exports or packaged deliverables
 - if generated artifacts are not yet defined, defer these folders
 - for curriculum/course-planning projects, prefer storing working deliverables in `course-plan/` unless a separate export pipeline is explicitly requested
 
@@ -416,9 +335,10 @@ Short summary of:
 
 Provide a clean tree view.
 
-### 3. Structure Rationale
+### 3. Structure Notes
 
 Explain each major folder or root file.
+Include a brief note on whether `tasks.md` should be included now or deferred, and why.
 
 ### 4. Essential vs Optional
 
@@ -428,23 +348,15 @@ Separate:
 
 For every proposed item under "create now", include a short "why now" note.
 
-### 5. Task Tracking Recommendation
-
-State one of:
-- include `tasks.md` now
-- defer `tasks.md` for now
-
-Briefly explain why.
-
-### 6. Initial `AGENTS.md`
+### 5. Initial `AGENTS.md`
 
 Provide full draft content.
 
-### 7. Initial `tasks.md` (if included)
+### 6. Initial `tasks.md` (if included)
 
 Provide a simple starter file.
 
-### 8. Setup Notes
+### 7. Setup Notes
 
 List assumptions, open questions, and future extensions.
 
@@ -470,6 +382,98 @@ Do:
 - optimize for both humans and agents
 - keep the system simple enough for beginners to maintain
 
-## Initialization Rule
+## End of Core Prompt
 
-At the very start of your response, ask for the project purpose and the minimum extra information needed before proposing structure.
+Everything below this line is reference-only. Do not copy it unless it applies to the project.
+
+---
+
+## Reference Only
+
+These sections are optional. Copy only the subsections that apply.
+
+---
+
+### Checklist Workflow
+
+Use when the project needs unresolved-input planning or a setup checklist.
+
+Use checklist guidance when it helps the user organize unresolved inputs or multi-step preparation work.
+
+If a checklist would help, ask: "Would you like me to generate a setup checklist before we create your project structure?"
+
+If the user says yes:
+- generate a concise Markdown checklist tailored to the project
+- place it next to the relevant work instead of embedding it in a core deliverable
+- include only unresolved decisions or missing inputs
+- include source gathering, output definition, and constraint capture when relevant
+- include destination paths and starter intake files only when they add clear value
+- keep the checklist concise, practical, and free of duplicated items
+- if PDFs are involved, prefer Markdown extraction and verify the text against the source before relying on it
+- wait for user confirmation before designing folders
+
+Checklist scope rules:
+- do not include items already answered by the user
+- if a destination path and filename are already clear, create the file scaffold instead of making it a checklist task
+- aim for 5-10 checkbox items
+- do not place task lists inline inside core deliverables
+- keep checklist/task paths ignored by version control when local-only tracking is desired
+
+If the user says no, continue normally.
+
+---
+
+### Proactive Checklist Prompts
+
+Use when the project reaches a milestone or new phase.
+
+Offer a checklist at milestone transitions such as:
+- after initial structure approval
+- before a new major phase
+- when scope expands
+- when a request introduces multiple follow-up tasks
+
+Keep the prompt short and optional, for example: "Would you like a quick checklist for this next phase?"
+
+If the user says yes:
+- generate a phase-specific checklist file next to the related work
+- keep the scope focused to that phase only
+- avoid duplicating completed checklist items
+
+If the user says no:
+- continue without friction and proceed with the requested work
+
+---
+
+### Education Terminology Rule
+
+Use when the project is educational or curriculum-related.
+
+When the project is educational:
+- use `course-plan/` for teacher-authored implementation materials
+- reserve `curriculum/` or `sources/official-curriculum/` for authority standards and expectations
+- keep official standards separate from teacher planning
+- keep terminology consistent in folder names and prose output
+
+---
+
+### Output Folders
+
+Use when the project will produce recurring builds, exports, or packaged deliverables.
+
+Keep generated/exported files separate from source materials, but only add output folders when they solve a real storage need.
+
+Use names like:
+- `output/`
+- `exports/`
+- `build/`
+- `dist/`
+
+Output-folder creation rule:
+- do not create `output/`, `exports/`, `build/`, or `dist/` by default
+- suggest them when the project will produce recurring builds, exports, or packaged deliverables
+- for software, use them for build artifacts or generated output
+- for writing, research, or curriculum projects, use them for final exports or packaged deliverables
+- if generated artifacts are not yet defined, defer these folders
+- for curriculum/course-planning projects, prefer storing working deliverables in `course-plan/` unless a separate export pipeline is explicitly requested
+

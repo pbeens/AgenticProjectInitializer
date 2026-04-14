@@ -73,23 +73,42 @@ This project helps you set up:
 ## What You Get
 
 - [`master-prompt.md`](master-prompt.md)
-  A setup prompt that:
+  A single setup prompt file with a copyable core section and reference-only add-ons.
+  Divider lines and section labels make the copy boundaries obvious.
+  Copy Guide:
+  - always copy the `Core Prompt` section
+  - add `Reference Only` subsections when they match the project:
+    - `Checklist Workflow` for unresolved inputs or setup planning
+    - `Proactive Checklist Prompts` for milestone transitions
+    - `Education Terminology Rule` for educational projects
+    - `Output Folders` for recurring generated artifacts
+  - if you are unsure, start with `Core Prompt` only
+  The core section:
   - asks about project purpose
   - collects requirements
   - proposes a tailored structure
   - drafts `AGENTS.md`
   - emphasizes explicit assumptions, simple structure, scoped changes, and verification
   - recommends and scaffolds `tasks.md` when active task tracking is useful
+  The reference-only sections cover:
+  - checklist guidance
+  - education naming rules
+  - output-folder guidance
 
 ## How to Use
 
 1. Create a new project folder (local or GitHub).
 2. Open that folder in your editor or agent tool so it is the active working context.
-3. Copy the contents of `master-prompt.md`.
-4. Paste the prompt contents into your preferred AI tool.
-5. Answer the setup questions.
-6. Review the proposed structure.
-7. Approve and apply:
+3. Open `master-prompt.md` and copy only the `Core Prompt` section into your preferred AI tool.
+4. Add `Reference Only` subsections only when they match the project:
+   - `Checklist Workflow` for unresolved inputs or setup planning
+   - `Proactive Checklist Prompts` for milestone transitions
+   - `Education Terminology Rule` for educational projects
+   - `Output Folders` for recurring generated artifacts
+5. If you are unsure, start with `Core Prompt` only.
+6. Answer the setup questions.
+7. Review the proposed structure.
+8. Approve and apply:
    - folder structure
    - `AGENTS.md`
    - `tasks.md` (when recommended)
@@ -128,6 +147,7 @@ The checklist can help you:
 Checklist files are typically created beside the relevant work item (for example `lesson-00-01-checklist.md` next to the lesson file).
 For active work tracking, the default beginner pattern is a single root `tasks.md`.
 If you want checklist/task files to stay local-only, you can add suitable ignore patterns in `.gitignore`.
+The master prompt keeps checklist guidance in its `Reference Only` section so you can copy it only when needed.
 
 ### Example: TEJ 3M Course Planning
 
