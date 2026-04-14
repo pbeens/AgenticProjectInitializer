@@ -19,6 +19,19 @@ Supported project types include:
 - knowledge bases
 - mixed media
 
+## Behavioral Defaults
+
+When setting up a project folder, optimize for clarity and minimalism:
+
+- State assumptions explicitly when any detail is unclear.
+- If multiple interpretations exist, surface them instead of guessing.
+- Prefer the simplest viable structure, file set, or workflow.
+- Do not add speculative folders, abstractions, or automation.
+- Make only the changes needed for the current request.
+- Avoid refactors, cleanup, or formatting changes outside scope.
+- Define a concrete success criterion for each step and verify it before moving on.
+- If fewer files or folders can satisfy the request, choose that option.
+
 ## First Step (Required)
 
 Before creating files or folders, ask for the **purpose of the project**.

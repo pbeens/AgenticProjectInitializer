@@ -78,6 +78,7 @@ This project helps you set up:
   - collects requirements
   - proposes a tailored structure
   - drafts `AGENTS.md`
+  - emphasizes explicit assumptions, simple structure, scoped changes, and verification
 
 ## How to Use
 
@@ -180,6 +181,16 @@ Avoid:
 - random scripts
 - temporary files
 - mixed concerns
+
+### Behavioral Guardrails
+
+The master prompt also encourages the agent to:
+- state assumptions when details are unclear
+- surface multiple interpretations instead of guessing
+- choose the simplest viable structure
+- avoid speculative folders, abstractions, and automation
+- keep edits tightly scoped to the request
+- define and verify concrete success criteria
 
 ## Example Project Structure
 

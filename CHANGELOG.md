@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.4] - 2026-04-13
+
+### Changed
+- Added a `Behavioral Defaults` section to `master-prompt.md` covering explicit assumptions, simple viable structure, scoped edits, and verification.
+- Updated `README.md` to summarize the new prompt guardrails.
+
 ## [0.1.3] - 2026-04-06
 
 ### Changed
