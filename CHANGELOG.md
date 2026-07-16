@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.5] - 2026-07-16
+
+### Changed
+- Added explicit operating modes to `master-prompt.md` for initializing new projects and working within existing projects.
+- Added file and action safety guidance covering inspection, preservation of existing work, authorization, reversible edits, and verification.
+- Refined the required opening question so the prompt establishes the project's purpose before proposing files or folders.
+- Generalized guidance about vendor-specific instruction files and added a reusable skill contract covering triggers, inputs, outputs, side effects, workflow, and verification.
+- Clarified in `README.md` that this initializer repository intentionally does not contain an `AGENTS.md`; the target project creates it after requirements are gathered and the structure is approved.
+
 ## [0.1.4] - 2026-04-13
 
 ### Changed

@@ -8,6 +8,8 @@ This repository gives you one reusable **master prompt** to start projects in an
 
 It helps you create a structure that both humans and AI agents can understand and maintain over time.
 
+This repository is the initializer itself, so it intentionally does not contain an `AGENTS.md`. The master prompt creates that file in the target project after the user provides the project requirements and approves the proposed structure.
+
 You get:
 - clear structure
 - clean separation of concerns

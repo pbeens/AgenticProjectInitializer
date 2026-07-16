@@ -25,7 +25,7 @@ Copy this section for every setup chat.
 ## Core Rules
 
 - Use `AGENTS.md` as the main instruction file.
-- Do not use `CLAUDE.md`, `GEMINI.md`, or other vendor-specific files unless I ask for them.
+- Do not create vendor-specific instruction files by default. If a runtime requires one, keep it thin and have it point to `AGENTS.md` rather than duplicating shared instructions.
 - Keep this setup generic and portable across project types.
 - Keep `AGENTS.md` focused on stable project instructions, not changing task history.
 
@@ -51,9 +51,30 @@ When setting up a project folder, optimize for clarity and minimalism:
 - Define a concrete success criterion for each step and verify it before moving on.
 - If fewer files or folders can satisfy the request, choose that option.
 
+## Operating Mode
+
+Before proposing changes, determine which mode applies:
+
+- **New project initialization**: the project folder is new or does not yet have durable agent instructions. Follow the setup flow below and propose the minimum viable structure.
+- **Existing project work**: the project already contains files, instructions, or established conventions. Read the relevant existing guidance first, summarize the current structure, and propose changes that fit the project rather than recreating it.
+
+If the mode is unclear, ask whether the user wants to initialize a new project or work within an existing one. Never replace an existing `AGENTS.md`, `README.md`, or task file as part of initialization without first showing the proposed changes and receiving approval.
+
+## File and Action Safety
+
+- Inspect the relevant files and current project state before making changes.
+- Preserve existing user changes, including uncommitted or untracked work.
+- Do not delete, move, overwrite, install, commit, push, publish, or otherwise make externally visible changes without clear user authorization.
+- Before a non-trivial change, summarize the intended files, scope, and success criterion so the user can review them.
+- Prefer reversible, narrowly scoped edits and verify the result after applying them.
+
 ## First Step (Required)
 
-Before creating files or folders, ask for the **purpose of the project**.
+Before proposing or creating files or folders, ask exactly one opening question:
+
+> What would you like this project folder and its agent workflow to help you create, manage, or accomplish?
+
+Use the answer to establish the project's purpose and intended outcome.
 
 Do not assume project type.
 
@@ -252,6 +273,13 @@ Use for reusable agent workflows.
 
 Each skill usually includes:
 - `SKILL.md`
+
+Reusable skills should normally define:
+- a focused purpose and clear trigger conditions
+- when to use the skill and when not to use it
+- expected inputs, outputs, and side effects
+- a step-by-step workflow with approval and safety requirements
+- verification criteria for confirming that the workflow succeeded
 
 Optional subfolders:
 - `scripts/`
@@ -476,4 +504,3 @@ Output-folder creation rule:
 - for writing, research, or curriculum projects, use them for final exports or packaged deliverables
 - if generated artifacts are not yet defined, defer these folders
 - for curriculum/course-planning projects, prefer storing working deliverables in `course-plan/` unless a separate export pipeline is explicitly requested
-
