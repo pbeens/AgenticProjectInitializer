@@ -4,7 +4,7 @@ A reusable prompt that helps you set up a clean project folder structure for wor
 
 ## What This Is
 
-This repository gives you one reusable **master prompt** to start projects in an agent-friendly way.
+This repository gives you one reusable [**master prompt**](master-prompt.md) to start projects in an agent-friendly way.
 
 It helps you create a structure that both humans and AI agents can understand and maintain over time.
 
