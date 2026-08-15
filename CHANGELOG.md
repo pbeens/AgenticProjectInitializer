@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.6] - 2026-08-15
+
+### Added
+- Added explicit prompt-traceability guidance requiring initialized projects to maintain a root-level `prompts.md` log for program-related user prompts while excluding unrelated administrative requests.
+- Added prompt-log requirements to the README and the generated `AGENTS.md` guidance.
+
 ## [0.1.5] - 2026-07-16
 
 ### Changed

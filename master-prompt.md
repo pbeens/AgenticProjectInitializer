@@ -29,6 +29,20 @@ Copy this section for every setup chat.
 - Keep this setup generic and portable across project types.
 - Keep `AGENTS.md` focused on stable project instructions, not changing task history.
 
+## Prompt Traceability
+
+Track every program-related user prompt received for the project in a root-level `prompts.md` file. This includes requests about software, product behavior, architecture, code, tests, documentation, or release work tied to the project. Do not log administrative or meta prompts that do not guide the program itself.
+
+Prompt-log rules:
+- append each new entry at the top so entries remain in strict reverse chronological order
+- paraphrase the prompt in concise, process-oriented language rather than copying it verbatim
+- include the local timestamp, a short goal line, the prompt summary, and the active computer hostname
+- add a brief technical-context line when it materially helps explain the work
+- keep `prompts.md` as a prompt log, not a transcript, task list, changelog, or place for private secrets
+- preserve enough detail to understand the requested outcome without reproducing the full conversation
+
+Create `prompts.md` during initialization and continue updating it for each subsequent program-related user prompt. If the file does not yet exist in an existing project, create it before proceeding. Do not log unrelated administrative or meta prompts.
+
 Supported project types include:
 - software
 - writing
@@ -218,6 +232,18 @@ Create an initial `AGENTS.md` with:
 - keep this file concise and durable
 - do not turn this file into a session log or changelog
 - store active plans and changing tasks in `tasks.md`
+- record program-related user prompts in the root-level `prompts.md` file according to the prompt traceability rules above
+
+### `prompts.md`
+
+Create `prompts.md` at the project root and maintain it as a concise, reverse-chronological log of program-related user prompts. Each entry should include:
+- a local ISO-like timestamp
+- a short goal line
+- a paraphrased prompt summary
+- the active computer hostname
+- an optional technical-context line when relevant
+
+Do not use `prompts.md` as a transcript, task tracker, or changelog. Do not copy prompts verbatim unless the user explicitly requests verbatim logging. If writing the log fails, report the failure and continue the requested work.
 
 ### `tasks.md`
 

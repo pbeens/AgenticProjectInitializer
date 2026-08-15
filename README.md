@@ -35,7 +35,7 @@ This is not only for coding. The same process works for:
 - documentation systems
 - mixed projects with code, text, and media
 
-The key idea is persistence: important decisions live in project files (especially `AGENTS.md`), so future work does not depend on old chat history.
+The key idea is persistence: instructions and prompt history live in project files (especially `AGENTS.md` and `prompts.md`), so future work does not depend on old chat history.
 
 ## Working With an Agent (Editor or Chat)
 
@@ -92,6 +92,7 @@ This project helps you set up:
   - drafts `AGENTS.md`
   - emphasizes explicit assumptions, simple structure, scoped changes, and verification
   - recommends and scaffolds `tasks.md` when active task tracking is useful
+  - requires a root-level `prompts.md` log for program-related user prompts and excludes unrelated administrative requests
   The reference-only sections cover:
   - checklist guidance
   - education naming rules
@@ -113,6 +114,7 @@ This project helps you set up:
 8. Approve and apply:
    - folder structure
    - `AGENTS.md`
+   - `prompts.md`
    - `tasks.md` (when recommended)
    - starter files (if useful)
 
@@ -121,6 +123,10 @@ This project helps you set up:
 You are not locked into the first setup. At any point, you can tell the agent in plain language to change how the project is organized.
 
 You can update `AGENTS.md` whenever your stable preferences change, and update `tasks.md` as active work evolves across sessions.
+
+### Prompt history
+
+Every initialized project includes a root-level [`prompts.md`](prompts.md) file. Agents append a concise paraphrase of each program-related user prompt at the top of that file, with a timestamp, goal, hostname, and optional technical context. Unrelated administrative and meta prompts are excluded. This is a prompt log rather than a full transcript, task tracker, or changelog; prompts are not copied verbatim unless the user asks for that.
 
 Common examples:
 - change file naming conventions
@@ -190,6 +196,10 @@ Use it for:
 - recently completed handoff notes
 
 Keep stable rules in `AGENTS.md`, and put changing execution details in `tasks.md`.
+
+### prompts.md
+
+This is the prompt-history log for program-related work in the project. It excludes unrelated administrative and meta prompts. Keep entries in reverse chronological order and paraphrase them concisely. Do not use this file for active task tracking or general session notes.
 
 ### Scripts vs Skills
 
