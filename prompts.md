@@ -1,5 +1,101 @@
 # Prompt Log
 
+## 2026-10-14 06:26:43 EDT
+
+**Goal:** Bump the project version and document the recent folder-organization changes.
+
+**Prompt summary:** Add a new changelog release entry describing the `project-docs/` convention, generated website handling in `docs/`, universal folder README requirements, source-material and asset guidance, and the build-managed README exception.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-10-14 06:25:02 EDT
+
+**Goal:** Resolve the README exception for build-managed output folders.
+
+**Prompt summary:** Align the universal folder README rule with the output-folder rule so builds that delete and recreate folders, such as published websites in `docs/`, generate the README instead of relying on a hand-written file.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-10-13 17:49:00 EDT
+
+**Goal:** Generalize published-site output rules and protect website source files.
+
+**Prompt summary:** Update the folder guidance so any published website may use `docs/` for generated output only, keep website source elsewhere, ask during intake whether the site will publish from `docs/`, and remove the duplicate Reference Only output-folder section.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-10-13 17:46:33 EDT
+
+**Goal:** Make folder README requirements universal across project organization.
+
+**Prompt summary:** Clarify that every created source-material, asset, reference, data, media, documentation, workflow, and output folder must contain its own README, not only output folders.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-10-13 17:35:30 EDT
+
+**Goal:** Document Quarto output handling and require README files for created folders.
+
+**Prompt summary:** Clarify that Quarto websites use `docs/` for website source and output, and require every created source, asset, documentation, media, data, or output folder to include a concise README explaining its purpose and conventions.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-10-13 17:34:30 EDT
+
+**Goal:** Clarify how initialized projects should organize assets and source material.
+
+**Prompt summary:** Review whether the prompt addresses project assets and other source material, and explain how assets should be distinguished from source materials.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-10-13 17:33:02 EDT
+
+**Goal:** Adopt separate folders for Quarto websites and general project documentation.
+
+**Prompt summary:** Update the master prompt and README to reserve `docs/` for Quarto website source and use `project-docs/` for general project documentation.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-10-13 17:32:27 EDT
+
+**Goal:** Clarify the repository convention for Quarto content versus general project documentation.
+
+**Prompt summary:** Evaluate whether references to a general `docs/` folder should be replaced with a distinct `project-docs/` folder because `docs/` should be reserved for Quarto websites.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-08-15 10:25:46 EDT
+
+**Goal:** Add the repository link to temporary social-media drafts.
+
+**Prompt summary:** Update each short, medium, and long social-media post with a link to the AgenticProjectInitializer repository.
+
+**Hostname:** m4-mini
+
+## 2026-08-15 10:24:28 EDT
+
+**Goal:** Draft temporary social-media copy for the prompt-tracking update.
+
+**Prompt summary:** Create an ignored temporary Markdown file containing short, medium, and long social-media posts suitable for Bluesky, Twitter/X, long-form Twitter/X, or Reddit, describing the new prompt-tracking feature.
+
+**Hostname:** m4-mini
+
 ## 2026-08-15 10:03:46 EDT
 
 **Goal:** Verify and formalize the repository's all-prompts tracking policy.

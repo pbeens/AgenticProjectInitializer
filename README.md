@@ -83,7 +83,6 @@ This project helps you set up:
     - `Checklist Workflow` for unresolved inputs or setup planning
     - `Proactive Checklist Prompts` for milestone transitions
     - `Education Terminology Rule` for educational projects
-    - `Output Folders` for recurring generated artifacts
   - if you are unsure, start with `Core Prompt` only
   The core section:
   - asks about project purpose
@@ -96,7 +95,6 @@ This project helps you set up:
   The reference-only sections cover:
   - checklist guidance
   - education naming rules
-  - output-folder guidance
 
 ## How to Use
 
@@ -107,7 +105,6 @@ This project helps you set up:
    - `Checklist Workflow` for unresolved inputs or setup planning
    - `Proactive Checklist Prompts` for milestone transitions
    - `Education Terminology Rule` for educational projects
-   - `Output Folders` for recurring generated artifacts
 5. If you are unsure, start with `Core Prompt` only.
 6. Answer the setup questions.
 7. Review the proposed structure.
@@ -225,6 +222,10 @@ skills/
 
 Keep the project root minimal and intentional.
 
+When a project publishes a website from `docs/`—as GitHub Pages commonly does—reserve that folder for generated website output only, regardless of whether the site is built with Quarto, Slidev, plain HTML, or another tool. Keep website source files elsewhere, never edit `docs/` by hand, and expect builds to overwrite or delete its contents. If `docs/` needs a README, have the build create it. Put general project documentation—such as architecture notes, workflows, decision logs, and planning notes—in `project-docs/` instead. Create either folder only when the project has a concrete need for it.
+
+Every created project folder for source materials, assets, references, documentation, media, data, workflows, or outputs must contain a concise `README.md`. This applies equally to input folders and generated-output folders. The exception is a build-managed folder that is deleted and recreated during generation; in that case, the build process should create or restore its README. Each README should explain the folder's purpose, contents, exclusions, provenance or licensing expectations when relevant, and any naming or generation conventions. For a generated website in `docs/`, the build process should create or restore `docs/README.md` because the folder may be cleared during builds.
+
 Avoid:
 - random scripts
 - temporary files
@@ -247,7 +248,8 @@ my-project/
 |-- AGENTS.md
 |-- tasks.md            (recommended for active work tracking)
 |-- README.md
-|-- docs/
+|-- project-docs/       (general project documentation, when needed)
+|-- docs/               (generated website output, when published from docs/)
 |-- src/
 |-- scripts/
 |-- skills/

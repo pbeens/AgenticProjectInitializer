@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.7] - 2026-10-14
+
+### Changed
+- Replaced the general-purpose `docs/` convention with `project-docs/` for architecture notes, workflows, decision logs, planning notes, and other project documentation.
+- Reserved `docs/` for generated website output when a project publishes a site from that folder, regardless of whether it uses GitHub Pages, Quarto, Slidev, plain HTML, or another tool.
+- Clarified that website source files must remain outside `docs/` and that builds may overwrite or delete the generated site contents.
+- Added intake guidance asking whether the project will publish a website from `docs/`.
+- Added README requirements for source-material, asset, reference, data, media, documentation, workflow, and output folders, including provenance, licensing, naming, and generation guidance where relevant.
+- Added an exception for build-managed folders: their build process must generate or restore the folder README when the folder is deleted and recreated.
+- Removed the duplicate Reference Only output-folder guidance so output rules have a single source of truth.
+
+### Added
+- Added explicit guidance distinguishing source materials and assets from generated outputs.
+- Added `project-docs/` and generated website output examples to the README and master-prompt folder structures.
+
 ## [0.1.6] - 2026-08-15
 
 ### Added

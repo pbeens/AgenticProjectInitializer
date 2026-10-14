@@ -13,7 +13,6 @@ This setup should be beginner-friendly. Favor the simplest structure that will s
   - `Checklist Workflow` for unresolved inputs or setup planning
   - `Proactive Checklist Prompts` for milestone transitions
   - `Education Terminology Rule` for educational projects
-  - `Output Folders` for recurring generated artifacts
 - If you are unsure, start with `Core Prompt` only.
 
 ---
@@ -109,7 +108,7 @@ You must still collect these inputs before finalizing structure (across multiple
 - expected generated outputs
 - source materials, references, or datasets
 - domain rules, style guides, or constraints
-- whether it is personal, collaborative, or for publication
+- whether it is personal, collaborative, or for publication, and whether it will publish a website (for example, with GitHub Pages from a `docs/` folder)
 
 Ask follow-up questions if anything is unclear.
 
@@ -176,7 +175,8 @@ Apply a minimum viable structure mindset:
 - Keep root minimal and intentional
 - Use `AGENTS.md` as the central guide
 - Keep `AGENTS.md` short enough to be routinely re-read by fresh agent sessions
-- Put documentation in `docs/`
+- Put the generated website in `docs/` when the project publishes a site from that folder (for example, with GitHub Pages); keep the site's source files elsewhere
+- Put general project documentation in `project-docs/`
 - Put shared utilities in `scripts/`
 - Put reusable workflows in `skills/`
 - Put source materials in clear folders
@@ -184,7 +184,7 @@ Apply a minimum viable structure mindset:
 - Keep temporary or machine-specific files separate
 - Prefer clear names over clever names
 - Match structure to project purpose
-- Only include folders like `src/`, `docs/`, or `data/` when justified
+- Only include folders like `src/`, `docs/`, `project-docs/`, or `data/` when justified
 - do not create top-level folders without a concrete near-term artifact to place there
 - normalize human labels into filesystem-friendly names unless the user explicitly requests otherwise
 
@@ -204,6 +204,8 @@ Do not put random helper scripts in root unless they are true entrypoints.
 
 Before proposing any top-level folder, provide a one-line justification tied to an expected artifact.
 If no concrete artifact is known yet, defer that folder.
+
+Every project subfolder created for source materials, assets, references, data, media, documentation, workflows, or outputs must include a concise `README.md` at creation time. This applies equally to input folders and generated-output folders; it is not limited to output directories. The exception is a build-managed folder that is deleted and recreated during generation; in that case, have the build generate the README. Explain the folder's purpose, what belongs there, what does not belong there, and any naming, sourcing, or generation conventions. Keep the README updated when the folder's role changes.
 
 ### `AGENTS.md`
 
@@ -266,6 +268,10 @@ It should help a fresh session resume work quickly.
 
 ### `docs/`
 
+Use `docs/` only when the project publishes a website from it, as GitHub Pages commonly does. In that case, `docs/` holds generated site output only, whatever tool builds it (for example, Quarto or Slidev). Keep the site's source files in another folder, never edit `docs/` by hand, and expect builds to overwrite or delete its contents. If `docs/` needs a README, have the build create it. Do not use `docs/` for general project notes; use `project-docs/`.
+
+### `project-docs/`
+
 Use for:
 - architecture notes
 - process notes
@@ -274,6 +280,8 @@ Use for:
 - decision logs
 - workflows
 - publishing/delivery notes
+
+Include `project-docs/README.md` when this folder is created.
 
 Documentation linking rule:
 - whenever you create or update a document, add or update links in the nearest relevant index/README in the same change
@@ -284,6 +292,8 @@ Documentation linking rule:
 ### `scripts/`
 
 Use only for shared project utilities not tied to one skill.
+
+Include `scripts/README.md` when this folder is created, explaining the role of the utilities and how they are run.
 
 Examples:
 - setup scripts
@@ -327,6 +337,9 @@ Use purpose-based names such as:
 - `references/`
 - `data/`
 - `media/`
+- `assets/`
+
+For every content folder created from this list—including `sources/`, `references/`, `data/`, `media/`, or `assets/`—create a colocated `README.md` explaining the material's role, provenance or licensing expectations when relevant, accepted file types, and what belongs elsewhere.
 
 Choose names that match real project work.
 
@@ -343,6 +356,8 @@ When converting user-provided labels into folder names:
 
 Keep generated/exported files separate from source materials, but only add output folders when they solve a real storage need.
 
+When the project publishes a website from `docs/` (for example, with GitHub Pages), `docs/` is the output folder for that site. Do not add a separate `output/` folder solely for the website unless the project has another distinct output need.
+
 Use names like:
 - `output/`
 - `exports/`
@@ -356,6 +371,7 @@ Output-folder creation rule:
 - for writing, research, or curriculum projects, use them for final exports or packaged deliverables
 - if generated artifacts are not yet defined, defer these folders
 - for curriculum/course-planning projects, prefer storing working deliverables in `course-plan/` unless a separate export pipeline is explicitly requested
+- whenever an output folder is created, add or update its `README.md` to explain the output purpose, generation command or workflow, and whether its contents are committed or disposable; if a build deletes and recreates the folder (as with `docs/` for a website), have the build generate the README instead
 
 ## Interaction Flow
 
@@ -370,6 +386,7 @@ Output-folder creation rule:
    - final folder tree
    - full `AGENTS.md`
    - `tasks.md` if included
+   - a `README.md` inside every created organizational folder
    - useful starter placeholders
 9. Keep setup lean.
 
@@ -388,6 +405,7 @@ Short summary of:
 ### 2. Proposed Folder Structure
 
 Provide a clean tree view.
+Include each required folder-level `README.md` in the tree.
 
 ### 3. Structure Notes
 
@@ -508,25 +526,3 @@ When the project is educational:
 - reserve `curriculum/` or `sources/official-curriculum/` for authority standards and expectations
 - keep official standards separate from teacher planning
 - keep terminology consistent in folder names and prose output
-
----
-
-### Output Folders
-
-Use when the project will produce recurring builds, exports, or packaged deliverables.
-
-Keep generated/exported files separate from source materials, but only add output folders when they solve a real storage need.
-
-Use names like:
-- `output/`
-- `exports/`
-- `build/`
-- `dist/`
-
-Output-folder creation rule:
-- do not create `output/`, `exports/`, `build/`, or `dist/` by default
-- suggest them when the project will produce recurring builds, exports, or packaged deliverables
-- for software, use them for build artifacts or generated output
-- for writing, research, or curriculum projects, use them for final exports or packaged deliverables
-- if generated artifacts are not yet defined, defer these folders
-- for curriculum/course-planning projects, prefer storing working deliverables in `course-plan/` unless a separate export pipeline is explicitly requested
