@@ -16,6 +16,7 @@ You get:
 - reusable workflows
 - long-term maintainability
 - vendor-neutral setup (no lock-in)
+- durable rationale for consequential project decisions
 
 ## What "Agentic" Means
 
@@ -92,6 +93,7 @@ This project helps you set up:
   - emphasizes explicit assumptions, simple structure, scoped changes, and verification
   - recommends and scaffolds `tasks.md` when active task tracking is useful
   - requires a root-level `prompts.md` log for program-related user prompts and excludes unrelated administrative requests
+  - recommends a separate dated `decisions.md` log when consequential decisions need to persist across sessions
   The reference-only sections cover:
   - checklist guidance
   - education naming rules
@@ -113,6 +115,7 @@ This project helps you set up:
    - `AGENTS.md`
    - `prompts.md`
    - `tasks.md` (when recommended)
+   - `decisions.md` (when durable decision records are useful)
    - starter files (if useful)
 
 ## You Can Adjust At Any Time
@@ -120,6 +123,12 @@ This project helps you set up:
 You are not locked into the first setup. At any point, you can tell the agent in plain language to change how the project is organized.
 
 You can update `AGENTS.md` whenever your stable preferences change, and update `tasks.md` as active work evolves across sessions.
+
+### Decision records
+
+When a project has consequential architectural, workflow, tooling, or organizational choices, keep their rationale in a separate root-level `decisions.md` file.
+
+Decision records should capture the decision, date, context, alternatives considered, and conditions that would justify revisiting it. Keep the log curated and concise. It is not a transcript, prompt log, task tracker, or changelog, and current code, configuration, or newer explicit instructions take precedence if an entry becomes stale.
 
 ### Prompt history
 
@@ -193,6 +202,10 @@ Use it for:
 - recently completed handoff notes
 
 Keep stable rules in `AGENTS.md`, and put changing execution details in `tasks.md`.
+
+### decisions.md
+
+This is the dated rationale log for consequential project decisions. Keep it separate from `AGENTS.md`, which should remain concise and durable, and from `tasks.md`, which tracks active execution.
 
 ### prompts.md
 

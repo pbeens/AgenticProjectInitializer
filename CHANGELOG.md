@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.1.8] - 2026-11-10
+
+### Added
+- Added guidance for maintaining a separate, dated `decisions.md` file for consequential project decisions.
+- Added `decisions.md` to record this repository's decision about separating durable rationale from prompts, instructions, tasks, and changelog history.
+- Credit to [Will Lee](https://x.com/WillLeeAI) for the decision-log recommendation.
+
+### Changed
+- Updated `master-prompt.md` and `README.md` to distinguish the root-level decision record from `AGENTS.md`, `tasks.md`, and `prompts.md`.
+
 ## [0.1.7] - 2026-10-14
 
 ### Changed

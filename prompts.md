@@ -1,5 +1,45 @@
 # Prompt Log
 
+## 2026-11-10 11:19:45 EST
+
+**Goal:** Refine the 0.1.8 changelog wording.
+
+**Prompt summary:** Name `decisions.md` explicitly in the release entry and change the Will Lee attribution to “Credit to Will Lee.”
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-11-10 11:16:32 EST
+
+**Goal:** Make the decision-log location unambiguous.
+
+**Prompt summary:** Correct the initializer guidance so `decisions.md` is maintained at the project root rather than presenting `project-docs/decisions.md` as an alternative.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-11-10 11:15:26 EST
+
+**Goal:** Credit the decision-log recommendation in the release history.
+
+**Prompt summary:** Add Will Lee's profile link to the 0.1.8 changelog entry as credit for the decision-log recommendation.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-11-10 11:15:09 EST
+
+**Goal:** Prepare the decision-log update for release.
+
+**Prompt summary:** Finalize the current unreleased decision-log guidance, credit Will Lee for the recommendation, and prepare the repository's next release.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
 ## 2026-10-14 06:26:43 EDT
 
 **Goal:** Bump the project version and document the recent folder-organization changes.

@@ -27,6 +27,7 @@ Copy this section for every setup chat.
 - Do not create vendor-specific instruction files by default. If a runtime requires one, keep it thin and have it point to `AGENTS.md` rather than duplicating shared instructions.
 - Keep this setup generic and portable across project types.
 - Keep `AGENTS.md` focused on stable project instructions, not changing task history.
+- Keep consequential project decisions in a separate dated decision log rather than expanding the initializer prompt or `AGENTS.md`.
 
 ## Prompt Traceability
 
@@ -41,6 +42,17 @@ Prompt-log rules:
 - preserve enough detail to understand the requested outcome without reproducing the full conversation
 
 Create `prompts.md` during initialization and continue updating it for each subsequent program-related user prompt. If the file does not yet exist in an existing project, create it before proceeding. Do not log unrelated administrative or meta prompts.
+
+## Decision Records
+
+For projects where decisions are likely to matter across sessions, create a separate root-level `decisions.md` file. Use the decision log for consequential architectural, workflow, tooling, or organizational choices whose rationale may otherwise need to be rediscovered.
+
+Decision-log rules:
+- record the date, decision, context, alternatives considered, and conditions that would justify revisiting it
+- keep entries concise and curated; do not use the file as a transcript, task list, prompt log, or changelog
+- treat the current code, configuration, and explicit newer instructions as the source of truth when the log is stale or conflicts with them
+- update the log when a consequential decision is made or materially changed
+- do not create the file speculatively for a tiny, self-contained project with no durable decisions to preserve
 
 Supported project types include:
 - software
@@ -119,6 +131,7 @@ Treat task tracking as a normal part of agentic work.
 Use this simple split:
 - `AGENTS.md`: stable instructions, conventions, workflow rules, and folder map
 - `tasks.md`: active tasks, current plan, next actions, status notes, and open questions
+- `decisions.md`: dated rationale for consequential project decisions
 
 Do not let `AGENTS.md` become a running log of current work.
 
@@ -127,6 +140,7 @@ When drafting `AGENTS.md`, include rules that:
 - store changing work in `tasks.md`
 - avoid putting detailed task lists inline inside core deliverables
 - encourage agents to read `AGENTS.md` first, then `tasks.md` when active work is being tracked
+- direct agents to consult the decision log before making consequential changes and update it when they make a durable decision
 
 Recommend creating `tasks.md` when active work spans multiple steps, multiple sessions, or open questions; defer it only when the project is tiny and self-contained.
 
@@ -235,6 +249,7 @@ Create an initial `AGENTS.md` with:
 - do not turn this file into a session log or changelog
 - store active plans and changing tasks in `tasks.md`
 - record program-related user prompts in the root-level `prompts.md` file according to the prompt traceability rules above
+- consult the project decision log before consequential changes and record new durable decisions there
 
 ### `prompts.md`
 
@@ -246,6 +261,17 @@ Create `prompts.md` at the project root and maintain it as a concise, reverse-ch
 - an optional technical-context line when relevant
 
 Do not use `prompts.md` as a transcript, task tracker, or changelog. Do not copy prompts verbatim unless the user explicitly requests verbatim logging. If writing the log fails, report the failure and continue the requested work.
+
+### `decisions.md`
+
+When included, maintain this as a concise, dated record of consequential project decisions. Each entry should include:
+- the date
+- the decision
+- the context or problem
+- important alternatives considered
+- conditions that would justify revisiting it
+
+Use the decision log for rationale and durable context, not current task status, prompt history, session notes, or release history. The current code, configuration, and newer explicit instructions take precedence if an entry is stale.
 
 ### `tasks.md`
 
@@ -378,17 +404,19 @@ Output-folder creation rule:
 1. Ask setup questions (starting with project purpose).
 2. Infer project type and propose structure.
 3. Recommend whether `tasks.md` should be included now.
-4. Explain why the structure fits.
-5. Mark what is essential now vs optional later.
-6. Draft initial `AGENTS.md`.
-7. If `tasks.md` is warranted, draft an initial `tasks.md` starter.
-8. After approval, generate:
+4. Recommend whether a decision log should be included now, based on the project's expected complexity and need for durable rationale.
+5. Explain why the structure fits.
+6. Mark what is essential now vs optional later.
+7. Draft initial `AGENTS.md`.
+8. If `tasks.md` is warranted, draft an initial `tasks.md` starter.
+9. After approval, generate:
    - final folder tree
    - full `AGENTS.md`
    - `tasks.md` if included
+   - the decision log if included
    - a `README.md` inside every created organizational folder
    - useful starter placeholders
-9. Keep setup lean.
+10. Keep setup lean.
 
 ## Required Response Format
 
@@ -410,7 +438,7 @@ Include each required folder-level `README.md` in the tree.
 ### 3. Structure Notes
 
 Explain each major folder or root file.
-Include a brief note on whether `tasks.md` should be included now or deferred, and why.
+Include brief notes on whether `tasks.md` and the decision log should be included now or deferred, and why.
 
 ### 4. Essential vs Optional
 
