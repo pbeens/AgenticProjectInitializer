@@ -203,6 +203,8 @@ Use it for:
 
 Keep stable rules in `AGENTS.md`, and put changing execution details in `tasks.md`.
 
+For non-trivial work, use `tasks.md` as a concise pre-implementation plan. Include the goal, proposed steps, assumptions, open questions or risks, and success criteria. For substantial, risky, or structurally significant changes, the agent should pause after preparing the plan and ask the user to approve it before editing project files. Small, obvious, low-risk changes may proceed without a formal plan. Update `tasks.md` after implementation and verification.
+
 ### decisions.md
 
 This is the dated rationale log for consequential project decisions. Keep it separate from `AGENTS.md`, which should remain concise and durable, and from `tasks.md`, which tracks active execution.

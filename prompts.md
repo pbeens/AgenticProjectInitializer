@@ -1,5 +1,25 @@
 # Prompt Log
 
+## 2026-11-10 11:38:39 EST
+
+**Goal:** Credit the planning recommendation.
+
+**Prompt summary:** Add credit to Banbo Insight for recommending a planning file before implementation.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
+## 2026-11-10 11:33:31 EST
+
+**Goal:** Clarify planning and approval before implementation.
+
+**Prompt summary:** Add the draft planning-checkpoint workflow to the initializer, using `tasks.md` for non-trivial plans and requiring user approval before substantial changes.
+
+**Hostname:** m4-mini
+
+**Active agent:** Codex
+
 ## 2026-11-10 11:19:45 EST
 
 **Goal:** Refine the 0.1.8 changelog wording.

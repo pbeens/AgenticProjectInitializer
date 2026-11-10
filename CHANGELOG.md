@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
+### Changed
+- Clarified that `tasks.md` can serve as a concise pre-implementation plan for non-trivial work.
+- Added an explicit user-approval checkpoint before substantial, risky, or structurally significant changes, while allowing trivial changes to proceed without formal planning.
+- Credit to [Banbo Insight](https://x.com/Banbo_Insight) for the planning-before-implementation recommendation.
+
 ## [0.1.8] - 2026-11-10
 
 ### Added

@@ -141,6 +141,9 @@ When drafting `AGENTS.md`, include rules that:
 - avoid putting detailed task lists inline inside core deliverables
 - encourage agents to read `AGENTS.md` first, then `tasks.md` when active work is being tracked
 - direct agents to consult the decision log before making consequential changes and update it when they make a durable decision
+- require a concise plan in `tasks.md` before non-trivial implementation work
+- require user approval of the plan before substantial, risky, or structurally significant changes
+- keep planning proportional to the work and update `tasks.md` after implementation and verification
 
 Recommend creating `tasks.md` when active work spans multiple steps, multiple sessions, or open questions; defer it only when the project is tiny and self-contained.
 
@@ -152,6 +155,21 @@ Common signals that `tasks.md` should be included now:
 - the user wants the agent to help plan before implementation
 
 If none of those signals apply, you may defer `tasks.md`, but explain why.
+
+### Planning Before Implementation
+
+Before implementing non-trivial work, inspect the project instructions and create or update `tasks.md` with a concise plan when active work tracking is useful.
+
+The plan should briefly state:
+- the goal
+- the proposed steps
+- important assumptions
+- open questions or risks
+- concrete success criteria
+
+For substantial, risky, or structurally significant changes, stop after preparing the plan and ask the user to review and approve it before editing project files. Treat clear responses such as "approve," "proceed," or "go ahead" as approval. If the user requests changes, revise `tasks.md` and ask for approval again. Do not treat silence or an unrelated response as approval.
+
+Small, obvious, low-risk changes may proceed without creating or updating a plan. After implementation and verification, update `tasks.md` with the outcome, remaining work, or follow-up items.
 
 ## Task Workflow Guidance
 
@@ -408,15 +426,16 @@ Output-folder creation rule:
 5. Explain why the structure fits.
 6. Mark what is essential now vs optional later.
 7. Draft initial `AGENTS.md`.
-8. If `tasks.md` is warranted, draft an initial `tasks.md` starter.
-9. After approval, generate:
+8. If `tasks.md` is warranted, draft an initial `tasks.md` starter and planning workflow.
+9. For substantial setup work, ask the user to approve the proposed plan before generating files.
+10. After approval, generate:
    - final folder tree
    - full `AGENTS.md`
    - `tasks.md` if included
    - the decision log if included
    - a `README.md` inside every created organizational folder
    - useful starter placeholders
-10. Keep setup lean.
+11. Keep setup lean.
 
 ## Required Response Format
 
